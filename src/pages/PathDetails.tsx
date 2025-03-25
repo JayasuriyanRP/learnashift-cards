@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import CardDeck from '@/components/CardDeck';
 import { toast } from '@/components/ui/use-toast';
-import { ArrowLeft, BookOpen, Brain } from 'lucide-react';
+import { ArrowLeft, BookOpen, Brain, Code } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 // We'll dynamically import the flashcard data based on the path ID
@@ -14,6 +14,7 @@ const PathDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isCodeTipsOpen, setIsCodeTipsOpen] = useState(false);
 
   useEffect(() => {
     const loadFlashcards = async () => {
@@ -88,7 +89,7 @@ const PathDetails = () => {
           subtitle={flashcards.description}
         />
         
-        <div className="mt-6 mb-8">
+        <div className="mt-6 mb-4">
           <Collapsible
             open={isOpen}
             onOpenChange={setIsOpen}
@@ -115,6 +116,40 @@ const PathDetails = () => {
                   <li>Review your assessment results at the end.</li>
                 </ol>
                 <p className="text-muted-foreground mt-2">Keyboard shortcuts: Space to flip card, Y/1 for correct, N/0 for incorrect.</p>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+        
+        <div className="mb-8">
+          <Collapsible
+            open={isCodeTipsOpen}
+            onOpenChange={setIsCodeTipsOpen}
+            className="w-full"
+          >
+            <CollapsibleTrigger asChild>
+              <button className="flex items-center justify-between w-full p-4 bg-secondary/5 hover:bg-secondary/10 rounded-lg border border-secondary/20 transition-colors">
+                <div className="flex items-center">
+                  <Code className="h-5 w-5 mr-2 text-secondary-foreground" />
+                  <h3 className="text-lg font-medium">Code Blocks in Flashcards</h3>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {isCodeTipsOpen ? 'Click to collapse' : 'Click to expand'}
+                </div>
+              </button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="p-4 pt-2 text-sm">
+              <div className="space-y-2 bg-card p-4 rounded-lg border border-border/30">
+                <p className="font-medium">How to use code blocks in flashcards:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Wrap code snippets with triple backticks (```code here```) for syntax highlighting.</li>
+                  <li>For inline code, use single backticks (`code`).</li>
+                  <li>Longer code snippets will automatically get a scrollbar.</li>
+                  <li>Cards with code will display a code icon indicator.</li>
+                </ul>
+                <pre className="bg-muted p-2 rounded-md text-left overflow-x-auto text-xs font-mono mt-2">
+                  <code>{`Example: \`\`\`\nfunction hello() {\n  console.log("Hello world!");\n}\n\`\`\``}</code>
+                </pre>
               </div>
             </CollapsibleContent>
           </Collapsible>
