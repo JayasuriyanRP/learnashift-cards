@@ -6,8 +6,12 @@ import learningPaths from '@/data/learningPaths.json';
 
 const Paths = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [paths, setPaths] = useState([]);
 
   useEffect(() => {
+    // Load learning paths
+    setPaths(learningPaths);
+    
     // Simulate loading data
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -35,7 +39,7 @@ const Paths = () => {
         
         <main className="py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {learningPaths.map((path) => (
+            {paths.map((path) => (
               <PathCard
                 key={path.id}
                 id={path.id}
