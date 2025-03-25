@@ -22,6 +22,13 @@
     "color": "blue"
   },
   {
+    "id": "golang",
+    "title": "Go Language",
+    "description": "Learn GoLang",
+    "icon": "Atom",
+    "color": "blue"
+  },
+  {
     "id": "design",
     "title": "UI/UX Design Principles",
     "description": "Explore the fundamentals of creating effective user interfaces",
