@@ -1,0 +1,33 @@
+
+{
+  "id": "javascript",
+  "title": "JavaScript Essentials",
+  "description": "Master the fundamentals of JavaScript programming language",
+  "cards": [
+    {
+      "id": "1",
+      "question": "What are JavaScript data types?",
+      "answer": "JavaScript has primitive data types (String, Number, Boolean, Null, Undefined, Symbol, BigInt) and objects. Arrays and functions are types of objects."
+    },
+    {
+      "id": "2",
+      "question": "What is scope in JavaScript?",
+      "answer": "Scope determines the accessibility of variables. There are global scope, function scope, and block scope (introduced with let and const)."
+    },
+    {
+      "id": "3",
+      "question": "What is a closure in JavaScript?",
+      "answer": "A closure is a function that has access to its own scope, the outer function's variables, and global variables, even after the outer function has returned."
+    },
+    {
+      "id": "4",
+      "question": "What is the difference between == and === in JavaScript?",
+      "answer": "== checks for equality after doing type conversion, while === checks for equality without type conversion (strict equality)."
+    },
+    {
+      "id": "5",
+      "question": "What is a Promise in JavaScript?",
+      "answer": "A Promise is an object representing the eventual completion or failure of an asynchronous operation, allowing you to write asynchronous code in a more manageable way."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+
+{
+  "id": "design",
+  "title": "UI/UX Design Principles",
+  "description": "Explore the fundamentals of creating effective user interfaces",
+  "cards": [
+    {
+      "id": "1",
+      "question": "What is the difference between UI and UX?",
+      "answer": "UI (User Interface) refers to the visual elements users interact with. UX (User Experience) encompasses the entire user journey and how they feel about the interaction."
+    },
+    {
+      "id": "2",
+      "question": "What is the principle of hierarchy in design?",
+      "answer": "Hierarchy in design is about organizing elements by importance, guiding users through content in a specific order using size, color, contrast, and spacing."
+    },
+    {
+      "id": "3",
+      "question": "What is white space in design?",
+      "answer": "White space (or negative space) is the empty area between design elements. It helps improve readability, focus attention, and create visual hierarchy."
+    },
+    {
+      "id": "4",
+      "question": "What is accessibility in design?",
+      "answer": "Accessibility in design ensures products can be used by people with disabilities. This includes considerations for color contrast, text size, keyboard navigation, and screen reader compatibility."
+    },
+    {
+      "id": "5",
+      "question": "What is a design system?",
+      "answer": "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency across products and help teams collaborate more efficiently."
+    }
+  ]
+}

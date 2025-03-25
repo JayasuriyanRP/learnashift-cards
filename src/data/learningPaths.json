@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": "web-dev",
+    "title": "Web Development Fundamentals",
+    "description": "Learn the core concepts of modern web development with these flashcards",
+    "icon": "Code",
+    "color": "sky"
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript Essentials",
+    "description": "Master the fundamentals of JavaScript programming language",
+    "icon": "FileCode",
+    "color": "yellow"
+  },
+  {
+    "id": "react",
+    "title": "React Framework",
+    "description": "Learn how to build user interfaces with the React library",
+    "icon": "Atom",
+    "color": "blue"
+  },
+  {
+    "id": "design",
+    "title": "UI/UX Design Principles",
+    "description": "Explore the fundamentals of creating effective user interfaces",
+    "icon": "Palette",
+    "color": "pink"
+  }
+]
