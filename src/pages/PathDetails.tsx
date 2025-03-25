@@ -4,7 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import CardDeck from '@/components/CardDeck';
 import { toast } from '@/components/ui/use-toast';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, BookOpen, Brain } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 // We'll dynamically import the flashcard data based on the path ID
 const PathDetails = () => {
@@ -12,6 +13,7 @@ const PathDetails = () => {
   const [flashcards, setFlashcards] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const loadFlashcards = async () => {
@@ -86,14 +88,40 @@ const PathDetails = () => {
           subtitle={flashcards.description}
         />
         
-        <main className="py-8">
+        <div className="mt-6 mb-8">
+          <Collapsible
+            open={isOpen}
+            onOpenChange={setIsOpen}
+            className="w-full"
+          >
+            <CollapsibleTrigger asChild>
+              <button className="flex items-center justify-between w-full p-4 bg-primary/5 hover:bg-primary/10 rounded-lg border border-primary/20 transition-colors">
+                <div className="flex items-center">
+                  <Brain className="h-5 w-5 mr-2 text-primary" />
+                  <h3 className="text-lg font-medium">How to Use Self-Assessment</h3>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {isOpen ? 'Click to collapse' : 'Click to expand'}
+                </div>
+              </button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="p-4 pt-2 text-sm">
+              <div className="space-y-2 bg-card p-4 rounded-lg border border-border/30">
+                <p className="font-medium">Self-assess your knowledge with these steps:</p>
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Flip the card to see the answer.</li>
+                  <li>Honestly evaluate if you knew the answer.</li>
+                  <li>Mark it as "Correct" or "Incorrect".</li>
+                  <li>Review your assessment results at the end.</li>
+                </ol>
+                <p className="text-muted-foreground mt-2">Keyboard shortcuts: Space to flip card, Y/1 for correct, N/0 for incorrect.</p>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+        
+        <main className="py-4">
           <CardDeck cards={flashcards.cards} />
-
-          <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground">
-              Tip: Use keyboard arrows ← → to navigate or Space to flip
-            </p>
-          </div>
         </main>
       </div>
     </div>
