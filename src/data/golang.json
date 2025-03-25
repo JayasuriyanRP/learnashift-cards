@@ -1,0 +1,46 @@
+{
+  "title": "Golang Interview Questions",
+  "description": "Prepare for your Golang interview with these flashcards covering key concepts and features of the language.",
+  "cards": [
+    {
+      "id": "1",
+      "question": "What is Go (Golang)?",
+      "answer": "Go, also known as Golang, is an open-source programming language developed by Google. It is designed for simplicity, efficiency, and concurrency."
+    },
+    {
+      "id": "2",
+      "question": "What are Goroutines?",
+      "answer": "Goroutines are lightweight threads managed by the Go runtime. They allow concurrent execution of functions, making Go highly efficient for parallel tasks."
+    },
+    {
+      "id": "3",
+      "question": "What is a Go interface?",
+      "answer": "A Go interface is a type that specifies method signatures. It allows different types to be used interchangeably if they implement the required methods."
+    },
+    {
+      "id": "4",
+      "question": "What is the purpose of the 'defer' statement in Go?",
+      "answer": "The 'defer' statement in Go is used to ensure that a function call is executed at the end of the containing function's execution, typically for resource cleanup."
+    },
+    {
+      "id": "5",
+      "question": "How does Go handle memory management?",
+      "answer": "Go has an automatic garbage collector that manages memory allocation and deallocation, reducing the risk of memory leaks."
+    },
+    {
+      "id": "6",
+      "question": "What is the difference between 'var' and ':=' in Go?",
+      "answer": "'var' is used for explicit variable declaration, while ':=' is a shorthand for declaring and initializing a variable in a function scope."
+    },
+    {
+      "id": "7",
+      "question": "What is a Go channel?",
+      "answer": "A Go channel is a communication mechanism that allows Goroutines to send and receive values, enabling safe data sharing in concurrent programs."
+    },
+    {
+      "id": "8",
+      "question": "What are Go's main built-in data types?",
+      "answer": "Go's main built-in data types include int, float64, string, bool, array, slice, map, struct, and interface."
+    }
+  ]
+}
